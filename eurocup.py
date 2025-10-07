@@ -1,4 +1,3 @@
-import pandas as pd
 import requests
 import csv
 
@@ -112,7 +111,7 @@ for player in players:
 		player["credits"],
 		player["points"],
 		player["points"] / player["credits"],
-		player["points"] + player["allowed_points"],
+		player["points"] + player.get("allowed_points", 0.0),
 	])
 
 file.close()
