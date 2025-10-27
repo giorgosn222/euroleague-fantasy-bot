@@ -4,6 +4,7 @@ on:
   schedule:
     # Runs at 9 UTC (12 Greek time)
     - cron: "0 9 * * *"
+  workflow_dispatch:
 
 jobs:
   retrieve-stats:
@@ -23,5 +24,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Test Script
-        run: python euroleague.py
+      - name: Eurocup check gameday
+        run: python eurocupChecker.py
+
+      - name: Eurocup create CSV
+        run: python eurocup.py
+
+      - name: Eurocup send Email
+        run: python eurocupMail.py
