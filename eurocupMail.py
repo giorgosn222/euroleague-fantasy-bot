@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 # Load variables from .env file
 load_dotenv()
 
-EMAIL_ADDRESS = os.environ("EMAIL_ADDRESS")
-EMAIL_PASSWORD = os.environ("EMAIL_PASSWORD")
+EMAIL_ADDRESS = os.environ('EMAIL_ADDRESS')
+EMAIL_PASSWORD = os.environ('EMAIL_PASSWORD')
 
 msg = EmailMessage()
 msg['Subject'] = 'Automated Email for Fantasy'
