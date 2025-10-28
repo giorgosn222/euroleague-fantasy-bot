@@ -32,3 +32,6 @@ jobs:
 
       - name: Eurocup send Email
         run: python eurocupMail.py
+        env:
+          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
